@@ -2,14 +2,14 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package ltcutil_test
+package byndutil_test
 
 import (
 	"testing"
 
-	"github.com/ltcsuite/ltcd/btcec"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	. "github.com/ltcsuite/ltcutil"
+	"github.com/beyondcoin-project/byndd/btcec"
+	"github.com/beyondcoin-project/byndd/chaincfg"
+	. "github.com/beyondcoin-project/byndutil"
 )
 
 func TestEncodeDecodeWIF(t *testing.T) {

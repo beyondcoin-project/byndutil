@@ -9,9 +9,9 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/wire"
-	"github.com/ltcsuite/ltcutil/bloom"
+	"github.com/beyondcoin-project/byndd/chaincfg/chainhash"
+	"github.com/beyondcoin-project/byndd/wire"
+	"github.com/beyondcoin-project/byndutil/bloom"
 )
 
 // This example demonstrates how to create a new bloom filter, add a transaction
@@ -27,7 +27,7 @@ func ExampleNewFilter() {
 
 	// Create a transaction hash and add it to the filter.  This particular
 	// trasaction is the first transaction in block 310,000 of the main
-	// litecoin block chain.
+	// beyondcoin block chain.
 	txHashStr := "fd611c56ca0d378cdcd16244b45c2ba9588da3adac367c4ef43e808b280b8a45"
 	txHash, err := chainhash.NewHashFromStr(txHashStr)
 	if err != nil {

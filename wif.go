@@ -2,16 +2,16 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package ltcutil
+package byndutil
 
 import (
 	"bytes"
 	"errors"
 
-	"github.com/ltcsuite/ltcd/btcec"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcutil/base58"
+	"github.com/beyondcoin-project/byndd/btcec"
+	"github.com/beyondcoin-project/byndd/chaincfg"
+	"github.com/beyondcoin-project/byndd/chaincfg/chainhash"
+	"github.com/beyondcoin-project/byndutil/base58"
 )
 
 // ErrMalformedPrivateKey describes an error where a WIF-encoded private
@@ -40,7 +40,7 @@ type WIF struct {
 	// uncompressed (65-byte) one.
 	CompressPubKey bool
 
-	// netID is the litecoin network identifier byte used when
+	// netID is the beyondcoin network identifier byte used when
 	// WIF encoding the private key.
 	netID byte
 }
@@ -57,7 +57,7 @@ func NewWIF(privKey *btcec.PrivateKey, net *chaincfg.Params, compress bool) (*WI
 }
 
 // IsForNet returns whether or not the decoded WIF structure is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 func (w *WIF) IsForNet(net *chaincfg.Params) bool {
 	return w.netID == net.PrivateKeyID
 }

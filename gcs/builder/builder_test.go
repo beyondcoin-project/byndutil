@@ -9,13 +9,13 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/txscript"
-	"github.com/ltcsuite/ltcd/wire"
-	"github.com/ltcsuite/ltcutil"
-	"github.com/ltcsuite/ltcutil/gcs"
-	"github.com/ltcsuite/ltcutil/gcs/builder"
+	"github.com/beyondcoin-project/byndd/chaincfg"
+	"github.com/beyondcoin-project/byndd/chaincfg/chainhash"
+	"github.com/beyondcoin-project/byndd/txscript"
+	"github.com/beyondcoin-project/byndd/wire"
+	"github.com/beyondcoin-project/byndutil"
+	"github.com/beyondcoin-project/byndutil/gcs"
+	"github.com/beyondcoin-project/byndutil/gcs/builder"
 )
 
 var (
@@ -79,8 +79,8 @@ func TestUseBlockHash(t *testing.T) {
 		Index: 4321,
 	}
 
-	// ltcutil.Address
-	addr, err := ltcutil.DecodeAddress(testAddr, &chaincfg.MainNetParams)
+	// byndutil.Address
+	addr, err := byndutil.DecodeAddress(testAddr, &chaincfg.MainNetParams)
 	if err != nil {
 		t.Fatalf("Address decode failed: %s", err.Error())
 	}

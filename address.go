@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package ltcutil
+package byndutil
 
 import (
 	"bytes"
@@ -12,10 +12,10 @@ import (
 	"strings"
 
 	"github.com/btcsuite/golangcrypto/ripemd160"
-	"github.com/ltcsuite/ltcd/btcec"
-	"github.com/ltcsuite/ltcd/chaincfg"
-	"github.com/ltcsuite/ltcutil/base58"
-	"github.com/ltcsuite/ltcutil/bech32"
+	"github.com/beyondcoin-project/byndd/btcec"
+	"github.com/beyondcoin-project/byndd/chaincfg"
+	"github.com/beyondcoin-project/byndutil/base58"
+	"github.com/beyondcoin-project/byndutil/bech32"
 )
 
 // UnsupportedWitnessVerError describes an error where a segwit address being
@@ -55,7 +55,7 @@ var (
 )
 
 // encodeAddress returns a human-readable payment address given a ripemd160 hash
-// and netID which encodes the litecoin network and address type.  It is used
+// and netID which encodes the beyondcoin network and address type.  It is used
 // in both pay-to-pubkey-hash (P2PKH) and pay-to-script-hash (P2SH) address
 // encoding.
 func encodeAddress(hash160 []byte, netID byte) string {
@@ -123,14 +123,14 @@ type Address interface {
 	ScriptAddress() []byte
 
 	// IsForNet returns whether or not the address is associated with the
-	// passed litecoin network.
+	// passed beyondcoin network.
 	IsForNet(*chaincfg.Params) bool
 }
 
 // DecodeAddress decodes the string encoding of an address and returns
 // the Address if addr is a valid encoding for a known address type.
 //
-// The litecoin network the address is associated with is extracted if possible.
+// The beyondcoin network the address is associated with is extracted if possible.
 // When the address does not encode the network, such as in the case of a raw
 // public key, the address will be associated with the passed defaultNet.
 func DecodeAddress(addr string, defaultNet *chaincfg.Params) (Address, error) {
@@ -291,7 +291,7 @@ func (a *AddressPubKeyHash) ScriptAddress() []byte {
 }
 
 // IsForNet returns whether or not the pay-to-pubkey-hash address is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 func (a *AddressPubKeyHash) IsForNet(net *chaincfg.Params) bool {
 	return a.netID == net.PubKeyHashAddrID
 }
@@ -358,7 +358,7 @@ func (a *AddressScriptHash) ScriptAddress() []byte {
 }
 
 // IsForNet returns whether or not the pay-to-script-hash address is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 func (a *AddressScriptHash) IsForNet(net *chaincfg.Params) bool {
 	return a.netID == net.ScriptHashAddrID
 }
@@ -466,7 +466,7 @@ func (a *AddressPubKey) ScriptAddress() []byte {
 }
 
 // IsForNet returns whether or not the pay-to-pubkey address is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 func (a *AddressPubKey) IsForNet(net *chaincfg.Params) bool {
 	return a.pubKeyHashID == net.PubKeyHashAddrID
 }
@@ -509,7 +509,7 @@ func (a *AddressPubKey) PubKey() *btcec.PublicKey {
 // AddressWitnessPubKeyHash is an Address for a pay-to-witness-pubkey-hash
 // (P2WPKH) output. See BIP 173 for further details regarding native segregated
 // witness address encoding:
-// https://github.com/litecoin/bips/blob/master/bip-0173.mediawiki
+// https://github.com/beyondcoin/bips/blob/master/bip-0173.mediawiki
 type AddressWitnessPubKeyHash struct {
 	hrp            string
 	witnessVersion byte
@@ -561,7 +561,7 @@ func (a *AddressWitnessPubKeyHash) ScriptAddress() []byte {
 }
 
 // IsForNet returns whether or not the AddressWitnessPubKeyHash is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 // Part of the Address interface.
 func (a *AddressWitnessPubKeyHash) IsForNet(net *chaincfg.Params) bool {
 	return a.hrp == net.Bech32HRPSegwit
@@ -600,7 +600,7 @@ func (a *AddressWitnessPubKeyHash) Hash160() *[20]byte {
 // AddressWitnessScriptHash is an Address for a pay-to-witness-script-hash
 // (P2WSH) output. See BIP 173 for further details regarding native segregated
 // witness address encoding:
-// https://github.com/litecoin/bips/blob/master/bip-0173.mediawiki
+// https://github.com/beyondcoin/bips/blob/master/bip-0173.mediawiki
 type AddressWitnessScriptHash struct {
 	hrp            string
 	witnessVersion byte
@@ -652,7 +652,7 @@ func (a *AddressWitnessScriptHash) ScriptAddress() []byte {
 }
 
 // IsForNet returns whether or not the AddressWitnessScriptHash is associated
-// with the passed litecoin network.
+// with the passed beyondcoin network.
 // Part of the Address interface.
 func (a *AddressWitnessScriptHash) IsForNet(net *chaincfg.Params) bool {
 	return a.hrp == net.Bech32HRPSegwit

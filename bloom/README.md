@@ -1,11 +1,11 @@
 bloom
 =====
 
-[![Build Status](http://img.shields.io/travis/ltcsuite/ltcutil.svg)](https://travis-ci.org/ltcsuite/ltcutil) 
+[![Build Status](http://img.shields.io/travis/beyondcoin-project/byndutil.svg)](https://travis-ci.org/beyondcoin-project/byndutil) 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-[![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/ltcsuite/ltcutil/bloom)
+[![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/beyondcoin-project/byndutil/bloom)
 
-Package bloom provides an API for dealing with litecoin-specific bloom filters.
+Package bloom provides an API for dealing with beyondcoin-specific bloom filters.
 
 A comprehensive suite of tests is provided to ensure proper functionality.  See
 `test_coverage.txt` for the gocov coverage report.  Alternatively, if you are
@@ -15,13 +15,13 @@ report.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/ltcsuite/ltcutil/bloom
+$ go get -u github.com/beyondcoin-project/byndutil/bloom
 ```
 
 ## Examples
 
 * [NewFilter Example]
-  (http://godoc.org/github.com/ltcsuite/ltcutil/bloom#example-NewFilter)  
+  (http://godoc.org/github.com/beyondcoin-project/byndutil/bloom#example-NewFilter)  
   Demonstrates how to create a new bloom filter, add a transaction hash to it,
   and check if the filter matches the transaction.
 

@@ -1,13 +1,13 @@
 coinset
 =======
 
-[![Build Status](http://img.shields.io/travis/ltcsuite/ltcutil.svg)]
-(https://travis-ci.org/ltcsuite/ltcutil) [![ISC License]
+[![Build Status](http://img.shields.io/travis/beyondcoin-project/byndutil.svg)]
+(https://travis-ci.org/beyondcoin-project/byndutil) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/ltcsuite/ltcutil/coinset)
+(http://godoc.org/github.com/beyondcoin-project/byndutil/coinset)
 
-Package coinset provides litecoin-specific convenience functions for selecting
+Package coinset provides beyondcoin-specific convenience functions for selecting
 from and managing sets of unspent transaction outpoints (UTXOs).
 
 A comprehensive suite of tests is provided to ensure proper functionality.  See
@@ -18,7 +18,7 @@ report.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/ltcsuite/ltcutil/coinset
+$ go get -u github.com/beyondcoin-project/byndutil/coinset
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ $ go get -u github.com/ltcsuite/ltcutil/coinset
 Each unspent transaction outpoint is represented by the Coin interface.  An
 example of a concrete type that implements Coin is coinset.SimpleCoin.
 
-The typical use case for this library is for creating raw litecoin transactions
+The typical use case for this library is for creating raw beyondcoin transactions
 given a set of Coins that may be spent by the user, for example as below:
 
 ```Go

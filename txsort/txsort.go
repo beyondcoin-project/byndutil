@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // Provides functions for sorting tx inputs and outputs according to BIP 69
-// (https://github.com/litecoin/bips/blob/master/bip-0069.mediawiki)
+// (https://github.com/beyondcoin/bips/blob/master/bip-0069.mediawiki)
 
 package txsort
 
@@ -11,8 +11,8 @@ import (
 	"bytes"
 	"sort"
 
-	"github.com/ltcsuite/ltcd/chaincfg/chainhash"
-	"github.com/ltcsuite/ltcd/wire"
+	"github.com/beyondcoin-project/byndd/chaincfg/chainhash"
+	"github.com/beyondcoin-project/byndd/wire"
 )
 
 // InPlaceSort modifies the passed transaction inputs and outputs to be sorted
@@ -21,7 +21,7 @@ import (
 // WARNING: This function must NOT be called with published transactions since
 // it will mutate the transaction if it's not already sorted.  This can cause
 // issues if you mutate a tx in a block, for example, which would invalidate the
-// block.  It could also cause cached hashes, such as in a ltcutil.Tx to become
+// block.  It could also cause cached hashes, such as in a byndutil.Tx to become
 // invalidated.
 //
 // The function should only be used if the caller is creating the transaction or
