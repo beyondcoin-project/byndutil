@@ -1,10 +1,10 @@
 byndutil
-=======
+========
 
 [![Build Status](http://img.shields.io/travis/beyondcoin-project/byndutil.svg)](https://travis-ci.org/beyondcoin-project/byndutil) 
-[![Coverage Status](http://img.shields.io/coveralls/beyondcoin-project/byndutil.svg)](https://coveralls.io/r/beyondcoin-project/byndutil?branch=master) 
+<!--[![Coverage Status](http://img.shields.io/coveralls/beyondcoin-project/byndutil.svg)](https://coveralls.io/r/beyondcoin-project/byndutil?branch=master)-->
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-[![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/beyondcoin-project/byndutil)
+<!--[![GoDoc](http://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/beyondcoin-project/byndutil)-->
 
 Package byndutil provides beyondcoin-specific convenience functions and types.
 A comprehensive suite of tests is provided to ensure proper functionality.  See
